@@ -7,7 +7,7 @@ export const analyzeDealWithAI = async (
   band: string, 
   ltv: number
 ): Promise<AnalysisResult> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   
   const isInst = request.experienceRange === ExperienceRange.TEN_PLUS || request.experienceValueRange === ExperienceValueRange.TEN_PLUS;
   const isExp = !isInst && (request.experienceRange === ExperienceRange.THREE_NINE || request.experienceValueRange === ExperienceValueRange.FIVE_TEN);
